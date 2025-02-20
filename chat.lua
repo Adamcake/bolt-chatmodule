@@ -82,11 +82,12 @@ return {
         end
         timestampy = y
       end
-      if y < timestampy then goto continue end
-      local c = this:lookupchatcharacter(event, ax, ay, aw, ah)
-      if c then
-        msg = msg .. c
-        msgexists = true
+      if y >= timestampy then
+        local c = this:lookupchatcharacter(event, ax, ay, aw, ah)
+        if c then
+          msg = msg .. c
+          msgexists = true
+        end
       end
       ::continue::
     end
